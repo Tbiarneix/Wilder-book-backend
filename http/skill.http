@@ -1,0 +1,29 @@
+POST http://localhost:5000/api/skills
+Content-Type: application/json
+
+{
+    "name": "JS"
+}
+
+###
+
+GET http://localhost:5000/api/skills
+
+###
+
+DELETE http://localhost:5000/api/skills
+Content-Type: application/json
+
+{
+    "idToDelete": 2
+}
+
+###
+
+PUT http://localhost:5000/api/skills
+Content-Type: application/json
+
+{
+    "id": 2,
+    "name": "C"
+}

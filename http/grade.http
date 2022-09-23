@@ -1,0 +1,36 @@
+GET http://localhost:5000/api/grade
+
+###
+GET http://localhost:5000/api/gradeFromOneWilder
+Content-Type: application/json
+
+{
+    "wilderId": 29
+}
+
+###
+POST http://localhost:5000/api/grade
+Content-Type: application/json
+
+{
+    "grade": 10,
+    "wilderId": 29,
+    "skillName": "JS"
+}
+
+###
+PUT http://localhost:5000/api/grade
+Content-Type: application/json
+
+{
+    "id": 58,
+    "grade": 7
+}
+
+###
+DELETE http://localhost:5000/api/grade
+Content-Type: application/json
+
+{
+    "gradeId": 41
+}

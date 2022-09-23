@@ -1,0 +1,53 @@
+POST http://localhost:5000/api/wilders
+Content-Type: application/json
+
+{
+    "name": "Anas",
+    "description": "Petite phrase de test 2"
+}
+
+###
+GET http://localhost:5000/api/wilders
+
+###
+GET http://localhost:5000/api/getonewilder
+Content-Type: application/json
+
+{
+    "wilderId": 29
+}
+
+###
+GET http://localhost:5000/api/getOneWilder
+Content-Type: application/json
+
+{
+    "wilderId": 5
+}
+
+###
+DELETE http://localhost:5000/api/wilders
+Content-Type: application/json
+
+{
+    "idToDelete": 8
+}
+
+###
+PUT http://localhost:5000/api/wilders
+Content-Type: application/json
+
+{
+    "id": 29,
+    "name": "Anas",
+    "description": "Petite phrase de test 3"
+}
+
+###
+POST http://localhost:5000/api/wilders/addSkill
+Content-Type: application/json
+
+{
+    "wildersName": "Nicolas",
+    "skillName": "Javascript"
+}
