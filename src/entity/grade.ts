@@ -1,21 +1,27 @@
+import { ObjectType, Field } from "type-graphql";
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 import { Wilder } from "./wilder";
 import { Skill } from "./skill";
 
+@ObjectType()
 @Entity()
 export class Grade {
+  @Field()
   @PrimaryGeneratedColumn()
   id: number;
 
+  @Field()
   @Column()
   grade: number;
 
-  @ManyToOne(() => Wilder, (wilder) => wilder.grade, {
+  @Field(() => [Wilder])
+  @ManyToOne(() => Wilder, (wilder) => wilder.grades, {
     cascade: true,
     onDelete: "CASCADE",
   })
   wilder!: Wilder;
 
+  @Field(() => [Skill])
   @ManyToOne(() => Skill, (skill) => skill.grade, {
     cascade: true,
     onDelete: "CASCADE",
