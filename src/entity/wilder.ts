@@ -13,9 +13,13 @@ export class Wilder {
   @Column()
   name: string;
 
+  @Field((type) => String, { nullable: true })
+  @Column({ nullable: true })
+  description?: string;
+
   @Field(() => [Grade])
   @OneToMany(() => Grade, (grade) => grade.wilder, {
     onDelete: "CASCADE",
   })
-  grades!: Grade[];
+  grade?: Grade[];
 }

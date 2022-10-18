@@ -30,7 +30,7 @@ const gradeController: IController = {
       const wilder = await wilders.findOneBy({ id: req.body.wilderId });
       const wilderGrades = await wilders.find({
         relations: {
-          grades: {
+          grade: {
             skill: true,
           },
         },

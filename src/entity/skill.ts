@@ -13,7 +13,7 @@ export class Skill {
   @Column({ unique: true })
   name: string;
 
-  @Field(() => [Grade])
+  @Field(() => Grade)
   @OneToMany(() => Grade, (grade) => grade.skill, { onDelete: "CASCADE" })
   grade!: Grade[];
 }

@@ -14,14 +14,14 @@ export class Grade {
   @Column()
   grade: number;
 
-  @Field(() => [Wilder])
-  @ManyToOne(() => Wilder, (wilder) => wilder.grades, {
+  @Field(() => Wilder)
+  @ManyToOne(() => Wilder, (wilder) => wilder.grade, {
     cascade: true,
     onDelete: "CASCADE",
   })
   wilder!: Wilder;
 
-  @Field(() => [Skill])
+  @Field(() => Skill)
   @ManyToOne(() => Skill, (skill) => skill.grade, {
     cascade: true,
     onDelete: "CASCADE",
